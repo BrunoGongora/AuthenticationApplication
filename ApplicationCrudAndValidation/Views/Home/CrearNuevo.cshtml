@@ -1,0 +1,31 @@
+﻿@model ApplicationCrudAndValidation.Models.MenuData
+
+<h1>Crear nuevo Plato</h1>
+
+<form method="post" asp-action="Crear">
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+    <div class="mb-3">
+        <label for="nameDish" class="form-label">Nombre del Plato</label>
+        <input asp-for="NameDish" type="text" class="form-control" id="nameDish">
+    </div>
+    <div class="mb-3">
+        <label for="valoration" class="form-label">Valoracion</label>
+        <input asp-for="Valoration" type="text" class="form-control" id="valoration">
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">Tiempo Preparacion</label>
+        <input asp-for="Time" type="text" class="form-control" id="time">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Precio</label>
+        <input asp-for="Price" type="text" class="form-control" id="price">
+    </div>
+    <div class="mb-3">
+        <label for="difficulty" class="form-label">Dificultad</label>
+        <input asp-for="Difficulty" type="text" class="form-control" id="difficulty">
+    </div>
+    <div class="btns_form_create">
+        <button type="submit" value="Crear"  class="btn btn-success">Guardar</button>
+        <a asp-controller="Home" asp-action="RestaurantMenu" class="btn btn-danger">Cancelar</a>
+    </div>
+</form>

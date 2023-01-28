@@ -1,0 +1,27 @@
+﻿@model ApplicationCrudAndValidation.Models.Users
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="main_elements text-center">
+    <h1 class="mb-4 display-4">Inicar Sesion</h1>
+    <form method="post" asp-action="LogIn" class="form_container">
+        <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+            <input asp-for="Email" type="email" class="form-control" id="email">
+            <div class="text-danger">@ViewBag.ErrorMessage</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input asp-for="Password" type="password" class="form-control" id="password">
+        </div>
+        <p>Si no tienes cuenta <a asp-controller="Home" asp-action="Register">Registrate Aqui</a></p>
+        <button type="submit" class="mt-4 btn btn-primary">Iniciar Sesion</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="./js/site.js"></script>
+}
